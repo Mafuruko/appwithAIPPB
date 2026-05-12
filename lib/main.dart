@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -33,10 +32,7 @@ class HomePage extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [
-              Colors.blue.shade50,
-              Colors.blue.shade100,
-            ],
+            colors: [Colors.blue.shade50, Colors.blue.shade100],
           ),
         ),
         child: Center(
@@ -54,14 +50,11 @@ class HomePage extends StatelessWidget {
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
-                      colors: [
-                        Colors.blue.shade400,
-                        Colors.blue.shade600,
-                      ],
+                      colors: [Colors.blue.shade400, Colors.blue.shade600],
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.blue.withOpacity(0.3),
+                        color: Colors.blue.withValues(alpha: 0.3),
                         blurRadius: 20,
                         offset: const Offset(0, 10),
                       ),
@@ -74,7 +67,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                
+
                 // Title
                 Text(
                   'Object Detection',
@@ -85,17 +78,17 @@ class HomePage extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 12),
-                
+
                 // Subtitle
                 Text(
                   'Detect everyday objects with AI-powered precision',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Colors.grey.shade600,
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyLarge?.copyWith(color: Colors.grey.shade600),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 60),
-                
+
                 // Start Detection Button
                 ElevatedButton(
                   onPressed: () {
@@ -134,20 +127,17 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                
+
                 // Info Container
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: Colors.blue.shade200,
-                      width: 1,
-                    ),
+                    border: Border.all(color: Colors.blue.shade200, width: 1),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 10,
                         offset: const Offset(0, 4),
                       ),
@@ -157,10 +147,11 @@ class HomePage extends StatelessWidget {
                     children: [
                       Text(
                         'How it works',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue.shade900,
-                        ),
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue.shade900,
+                            ),
                       ),
                       const SizedBox(height: 8),
                       Text(
@@ -259,8 +250,8 @@ class _DetectionPageState extends State<DetectionPage> {
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
                   colors: [
-                    Colors.black.withOpacity(0.8),
-                    Colors.black.withOpacity(0.4),
+                    Colors.black.withValues(alpha: 0.8),
+                    Colors.black.withValues(alpha: 0.4),
                     Colors.transparent,
                   ],
                 ),
@@ -275,11 +266,11 @@ class _DetectionPageState extends State<DetectionPage> {
                       padding: const EdgeInsets.all(16),
                       margin: const EdgeInsets.only(bottom: 20),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.95),
+                        color: Colors.white.withValues(alpha: 0.95),
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
+                            color: Colors.black.withValues(alpha: 0.2),
                             blurRadius: 10,
                           ),
                         ],
@@ -292,9 +283,7 @@ class _DetectionPageState extends State<DetectionPage> {
                             children: [
                               Text(
                                 'Detected Objects (${_results.length})',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium
+                                style: Theme.of(context).textTheme.titleMedium
                                     ?.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: Colors.blue.shade600,
@@ -321,8 +310,7 @@ class _DetectionPageState extends State<DetectionPage> {
                                         label: Text(
                                           '${result.className} (${(result.confidence * 100).toStringAsFixed(1)}%)',
                                         ),
-                                        backgroundColor:
-                                            Colors.blue.shade100,
+                                        backgroundColor: Colors.blue.shade100,
                                         labelStyle: TextStyle(
                                           color: Colors.blue.shade900,
                                           fontWeight: FontWeight.w600,
@@ -347,9 +335,7 @@ class _DetectionPageState extends State<DetectionPage> {
                         FloatingActionButton.extended(
                           onPressed: _toggleResults,
                           backgroundColor: Colors.blue.shade600,
-                          label: Text(
-                            _showResults ? 'Hide' : 'Show',
-                          ),
+                          label: Text(_showResults ? 'Hide' : 'Show'),
                           icon: Icon(
                             _showResults
                                 ? Icons.visibility_off
@@ -363,7 +349,7 @@ class _DetectionPageState extends State<DetectionPage> {
                           vertical: 12,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withValues(alpha: 0.9),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
