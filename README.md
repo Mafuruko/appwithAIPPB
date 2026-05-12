@@ -1,7 +1,4 @@
-# appwithai
-
-`appwithai` adalah aplikasi Flutter untuk deteksi objek secara real-time menggunakan kamera perangkat dan model YOLO dalam format TensorFlow Lite.
-
+# Tugas APP with AI
 ## Identitas
 
 - Nama: Muhammad Naufal Dzakwan
